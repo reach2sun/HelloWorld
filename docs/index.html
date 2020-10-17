@@ -19,7 +19,10 @@
   <link href="css/simple-sidebar.css" rel="stylesheet">
 <script type="text/javascript">
   const urlParams = new URLSearchParams(window.location.search);
-  const topic = urlParams.get('topic');
+  var topic = urlParams.get('topic');
+  if(!topic){
+    topic = 'dashboard';
+  }
 </script>
 
 
@@ -60,13 +63,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
   <script src="https://www.w3schools.com/lib/w3.js"></script>  
 <script>
-
-  alert($("#w3s").attr('w3-include-html'));
   $("#w3s").attr({
       "w3-include-html" : topic + '.html'
     });
-  alert($("#w3s").attr('w3-include-html'));
-
 
   w3.includeHTML();
 </script>
